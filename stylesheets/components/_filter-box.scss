@@ -1,0 +1,37 @@
+.filter-box {
+  background-color: rgba(0,0,0,0.1);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.filter-box-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 25%;
+}
+
+.filter-box-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25%;
+}
+
+.filter-box-left {
+  position: fixed;
+  top: 25%;
+  left: 0;
+  width: 12.5%;
+  height: 50%;
+}
+
+.filter-box-right {
+  position: fixed;
+  top: 25%;
+  right: 0;
+  width: 12.5%;
+  height: 50%;
+}
