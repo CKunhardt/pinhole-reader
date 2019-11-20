@@ -1,9 +1,18 @@
-#example-text {
+#pr-example-text {
   margin-top: 25%;
   margin-bottom: 25%;
   width: 100%;
 }
 
-.single-word {
-  background-color: rgba(255,255,128,0.5);
+.pr-single-word {
+  // background-color: rgba(255,255,128,0.5);
+  display: inline;
+}
+
+.pr-single-word::selection {
+  background: transparent;
+}
+
+.pr-single-word::-moz-selection {
+  background: transparent;
 }

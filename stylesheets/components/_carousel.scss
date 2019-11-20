@@ -1,0 +1,36 @@
+.pr-reading-block-list {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 100%;
+  
+  a {
+    margin: 25px;
+  }
+}
+
+.pr-reading-block {
+  background: rgb(200, 200, 200);
+  box-shadow: 0 0 5px rgba(100, 100, 100, 0.5);
+  display: flex;
+  align-items: center;
+}
+
+.modal-body {
+  .pr-reading-block {
+    width: 200px;
+  }
+}
+
+.pr-reading-block img {
+  display: block;
+  margin: 5%;
+}
+
+#pr-add-block {
+  cursor: pointer;
+  background: center / contain no-repeat url('../images/icons/add.png');
+  box-shadow: 0 0 5px rgba(100, 100, 100, 0.5);
+  width: 200px;
+  height: 300px;
+}

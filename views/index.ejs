@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pinhole Reader - Home</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light pr-navbar">
+      <a class="navbar-brand" href="/">
+        <img src="images/icons/eye-logo-temp.png" style="margin-right: 10px;" class="d-inline-block align-center"> Pinhole Reader
+      </a>
+    </nav>
+    <main>
+      <div class="container">
+        <div class="pr-reading-block-list">
+          <a class="pr-reading-block pr-display-none" id="pr-moby-dick" href="/reader">
+            <img src="images/moby-dick-pic.jpg" width="200">
+          </a>
+          <a id="pr-add-block" data-toggle="modal" data-target="#addReadingModal"></a>
+        </div>
+      </div>
+    </main>
+    <div class="modal fade" id="addReadingModal" tabindex="-1" role="dialog" aria-labelledby="addReadingModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addReadingModalTitle">Add A Reading</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="pr-reading-block pr-margin-auto" id="pr-moby-dick-modal">
+              <img src="images/moby-dick-pic.jpg" width="200">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button id="pr-modal-confirm" type="button" class="btn btn-primary disabled" data-dismiss="modal">Confirm</button>
+          </div>
+        </div>
+      </div> 
+    </div>
+    <footer>
+
+    </footer>
+    <script src="js/homepage.js"></script>
+  </body>
+</html>

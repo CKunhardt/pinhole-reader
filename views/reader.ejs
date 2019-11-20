@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Pinhole Reader - Reader</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/scroll-bar.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <!-- Put a title here, maybe. Low priority. -->
+    <header>
+
+    </header>
+
+    <!-- Ignore for now, maybe make this a vertical element? -->
+    <nav>
+
+    </nav>
+
+    <!-- Majority of content goes here -->
+    <main>
+      <div class="pr-container">
+        <div id="pr-example-text">
+            <div class="pr-filter-box pr-filter-box-top"></div>
+            <div class="pr-filter-box pr-filter-box-left"></div>
+            <div class="pr-filter-box pr-filter-box-right"></div>
+            <div class="pr-filter-box pr-filter-box-bottom"></div>
+         </div>
+      </div>
+
+    </main>
+
+    <!-- Controls here probably -->
+    <footer>
+      <div class="pr-controls">
+        <div class="pr-size-controls">
+          <div id="pr-zoom-out" class="pr-icon">
+            <div id="pr-zoom-out-disabled" class="pr-icon"></div>
+          </div>
+          <div id="pr-zoom-in" class="pr-icon">
+            <div id="pr-zoom-in-disabled" class="pr-icon"></div>
+          </div>
+        </div>
+        <div class="pr-bar-container">
+          <div id="pr-progress-bar-outer">
+            <div id="pr-progress-bar-inner"></div>
+          </div>
+        </div>
+        <div class="pr-other-controls">
+          <a id="pr-button-next" class="btn btn-primary pr-display-none" href="/">
+            CONTINUE
+          </a>
+        </div>
+      </div>
+
+    </footer>
+
+    <script src="js/reader.js"></script>
+  </body>
+</html>

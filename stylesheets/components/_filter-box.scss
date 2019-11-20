@@ -1,10 +1,10 @@
-.filter-box {
+.pr-filter-box {
   background-color: rgba(0,0,0,0.1);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
 }
 
-.filter-box-top {
+.pr-filter-box-top {
   position: fixed;
   top: 0;
   left: 0;
@@ -12,7 +12,7 @@
   height: 25%;
 }
 
-.filter-box-bottom {
+.pr-filter-box-bottom {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -20,7 +20,7 @@
   height: 25%;
 }
 
-.filter-box-left {
+.pr-filter-box-left {
   position: fixed;
   top: 25%;
   left: 0;
@@ -28,7 +28,7 @@
   height: 50%;
 }
 
-.filter-box-right {
+.pr-filter-box-right {
   position: fixed;
   top: 25%;
   right: 0;

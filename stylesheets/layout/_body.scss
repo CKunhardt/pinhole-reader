@@ -12,8 +12,13 @@ main {
   width: 100%;
 }
 
-.container {
+.pr-container {
   width: 1280px;
   display: block;
   margin: auto;
+}
+
+.pr-navbar {
+  box-shadow: 0px 0px 5px rgba(100, 100, 100, 0.5);
+  margin-bottom: 25px;
 }
