@@ -1,20 +1,41 @@
-.pr-bar-container {
-  flex: 8;
-  width: 100%;
-  display: block;
-  margin: auto;
+// .pr-bar-container {
+//   flex: 8;
+//   width: 100%;
+//   display: block;
+//   margin: auto;
+// }
+//
+// #pr-progress-bar-outer {
+//   height: 10px;
+//   width: 100%;
+//   background-color: rgb(155,155,155);
+//   border-radius: 4px;
+// }
+//
+// #pr-progress-bar-inner {
+//   height: 10px;
+//   border-radius: 4px;
+//   width: 1%;
+//   background-color: rgb(100,100,100);
+// }
+#pr-btn {
+  position: fixed;
+  right: 0;
+  top: 50%;
 }
 
-#pr-progress-bar-outer {
-  height: 10px;
-  width: 100%;
-  background-color: rgb(155,155,155);
-  border-radius: 4px;
+#mySidenav {
+  // position: absolute;
+  // z-index:-1;
+  // right: 0;
+  // height: 100%;
+  display: none;
+  background-color: #123456;
 }
 
-#pr-progress-bar-inner {
-  height: 10px;
-  border-radius: 4px;
-  width: 1%;
-  background-color: rgb(100,100,100);
+.sidenav .closebtn {
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }

@@ -46,3 +46,14 @@ $("#pr-zoom-out").click(() => {
     $("#pr-example-text").css("font-size", newSize);
   } else return
 })
+
+
+$("#pr-btn").click(() => {
+  if($("#mySidenav").is(":hidden")) {
+    $("#note-area").fadeOut();
+    $("#mySidenav").fadeIn();
+  } else {
+    $("#mySidenav").fadeOut();
+    $("#note-area").fadeIn();
+  }
+})
