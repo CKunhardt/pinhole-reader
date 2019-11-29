@@ -1,23 +1,23 @@
-// .pr-bar-container {
-//   flex: 8;
-//   width: 100%;
-//   display: block;
-//   margin: auto;
-// }
-//
-// #pr-progress-bar-outer {
-//   height: 10px;
-//   width: 100%;
-//   background-color: rgb(155,155,155);
-//   border-radius: 4px;
-// }
-//
-// #pr-progress-bar-inner {
-//   height: 10px;
-//   border-radius: 4px;
-//   width: 1%;
-//   background-color: rgb(100,100,100);
-// }
+.pr-bar-container {
+  flex: 8;
+  width: 100%;
+  display: block;
+  margin: auto;
+}
+
+#pr-progress-bar-outer {
+  height: 10px;
+  width: 100%;
+  background-color: rgb(155,155,155);
+  border-radius: 4px;
+}
+
+#pr-progress-bar-inner {
+  height: 10px;
+  border-radius: 4px;
+  width: 1%;
+  background-color: rgb(100,100,100);
+}
 #pr-btn {
   position: fixed;
   right: 0;

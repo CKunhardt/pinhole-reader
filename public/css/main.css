@@ -68,6 +68,24 @@
 #pr-example-text {
   overflow-y: auto; }
 
+.pr-bar-container {
+  flex: 8;
+  width: 100%;
+  display: block;
+  margin: auto; }
+
+#pr-progress-bar-outer {
+  height: 10px;
+  width: 100%;
+  background-color: #9b9b9b;
+  border-radius: 4px; }
+
+#pr-progress-bar-inner {
+  height: 10px;
+  border-radius: 4px;
+  width: 1%;
+  background-color: #646464; }
+
 #pr-btn {
   position: fixed;
   right: 0;
@@ -109,7 +127,8 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: white; }
+  background-color: white;
+  z-index: 1000; }
 
 .pr-icon {
   display: block;
