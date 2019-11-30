@@ -5,15 +5,10 @@
 //     <button tyle='button' class='btn btn-success'>Submit</button>
 //   </div>
 // </div>"
-
-
+// Forget about button. This is so hard to add...
 num_notes = 0;
-let removeBox = function(boxID) {
-  alert(boxID);
-}
-
 $(function() {
-  $("#note-area").bind('click', function(event) {
+  $("#note-area, #hover-area").bind('click', function(event) {
     if(event.target != this) return;
     let parentOffset = $(this).parent().offset();
     let x = event.pageX - parentOffset.left;
@@ -27,40 +22,63 @@ $(function() {
     noteDiv.style.left = 5 + 'px';
     noteDiv.style.top = y + 'px';
 
-
     let subDiv = document.createElement('div');
     subDiv.style.position = "relative";
     subDiv.style.display = "inline-block";
 
-
     let textArea = document.createElement('textarea');
     textArea.placeholder = "Add Your Comment"
-    textArea.cols="20";
-    textArea.rows="5";
+    textArea.cols="30";
+    textArea.rows="3";
 
-    let button = document.createElement('button');
-    button.className="btn btn-success";
-    button.id="note-button-"+num_notes;
-    button.style.position = "absolute";
-    button.style.bottom = "10px";
-    button.style.right = "8px";
-    button.setAttribute("onclick", "removeBox(" + noteDiv.id + ")");
-
-    alert(noteDiv.id);
-    // document.getElementById(noteDiv.id).addEventListener("click", function(e) {
-    //   alert("Hi");
-    // })
-    // button.onclick = function() {
-    //   this.parentElement.removeChild(this);
-    // }
-    // button.className = "btn btn-success";
-    button.appendChild(document.createTextNode("Submit"));
     subDiv.appendChild(textArea);
-    subDiv.appendChild(button);
     noteDiv.appendChild(subDiv);
 
 
     $("#note-area").append(noteDiv);
     num_notes++;
+  });
+
+  $("#hover-area").on("mouseenter", function(event) {
+    let parentOffset = $(this).parent().offset();
+    let y = event.pageY - parentOffset.top - $("h3").height();
+
+    let reminder = document.createElement('div');
+    reminder.id = "reminder";
+    reminder.style.left = "0px";
+    reminder.style.position = "absolute";
+    reminder.style.top = y + 'px';
+    reminder.style.fontSize = "30px";
+    reminder.appendChild(document.createTextNode("+"));
+    $("#hover-area").append(reminder);
   })
-})
+
+  $("#hover-area").on("mouseleave", function(event) {
+    let element = document.getElementById("reminder");
+    element.parentNode.removeChild(element);
+    // $("#hover-area").removeChild("reminder");
+  })
+  // $("#hover-area").on("mouseenter", function(e) {
+  //   $
+  // })
+  // $("#hover-area").hover(function(event) {
+  //   let parentOffset = $(this).parent().offset();
+  //   let y = event.pageY - parentOffset.top - $("h3").height();
+  //
+  //   let reminder = document.createElement('div');
+  //   reminder.className = "reminder";
+  //   reminder.style.left = "0px";
+  //   reminder.style.position = "absolute";
+  //   reminder.style.top = y + 'px';
+  //   reminder.style.fontSize = "30px";
+  //   reminder.appendChild(document.createTextNode("+"));
+  //   $("#hover-area").append(reminder);
+  // }, function() {
+  //   $("#")
+  //   alert("WTF?")
+  //   console.log($("#hover-area"))
+  //   $("#hover-area").removeClass('reminder');
+  // });
+});
+
+// Add note function (Small Reminder)
