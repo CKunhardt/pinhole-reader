@@ -7,6 +7,12 @@
 // </div>"
 // Forget about button. This is so hard to add...
 num_notes = 0;
+
+let removeBox = function(noteID) {
+  console.log(noteID);
+  $("#"+noteID).remove();
+}
+
 $(function() {
   $("#note-area, #hover-area").bind('click', function(event) {
     if(event.target != this) return;
@@ -28,9 +34,17 @@ $(function() {
 
     let textArea = document.createElement('textarea');
     textArea.placeholder = "Add Your Comment"
-    textArea.cols="30";
+    textArea.width="60%";
     textArea.rows="3";
 
+    let button = document.createElement('button');
+    button.style.fontSize = "15px";
+    button.style.position = "absolute";
+    button.style.right = "0";
+    button.setAttribute("onclick", 'removeBox("' + noteDiv.id + '")');
+    button.appendChild(document.createTextNode("×"));
+
+    subDiv.append(button);
     subDiv.appendChild(textArea);
     noteDiv.appendChild(subDiv);
 
@@ -58,27 +72,6 @@ $(function() {
     element.parentNode.removeChild(element);
     // $("#hover-area").removeChild("reminder");
   })
-  // $("#hover-area").on("mouseenter", function(e) {
-  //   $
-  // })
-  // $("#hover-area").hover(function(event) {
-  //   let parentOffset = $(this).parent().offset();
-  //   let y = event.pageY - parentOffset.top - $("h3").height();
-  //
-  //   let reminder = document.createElement('div');
-  //   reminder.className = "reminder";
-  //   reminder.style.left = "0px";
-  //   reminder.style.position = "absolute";
-  //   reminder.style.top = y + 'px';
-  //   reminder.style.fontSize = "30px";
-  //   reminder.appendChild(document.createTextNode("+"));
-  //   $("#hover-area").append(reminder);
-  // }, function() {
-  //   $("#")
-  //   alert("WTF?")
-  //   console.log($("#hover-area"))
-  //   $("#hover-area").removeClass('reminder');
-  // });
 });
 
 // Add note function (Small Reminder)

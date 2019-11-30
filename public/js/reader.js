@@ -11,17 +11,30 @@ let colorClear = function(event) {
 $(() => {
   $.get('texts/moby-dick.txt', (data) => {
     console.log(data);
-    let words = data.match(/[^" "]+\s/g);
+    let words = data.match(/([^" "]+\s)/g);
     console.log(words);
+    let re = new RegExp("/\n\w/g")
     let tree = document.createDocumentFragment();
     words.forEach((word, i) => {
-      let wordDiv = document.createElement('div');
-      wordDiv.id = 'pr-word-'+i;
-      wordDiv.className = 'pr-single-word';
-      wordDiv.appendChild(document.createTextNode(word));
-      wordDiv.addEventListener('mouseover', colorAdd);
-      wordDiv.addEventListener('click', colorClear);
-      tree.appendChild(wordDiv);
+      // if() {
+      //   console.log(word);
+      // }
+      if(word.replace(/\s+/g, "").replace(/\n/g, "").length < 1) {
+        let wordDiv = document.createElement('br');
+        wordDiv.id = 'pr-word-'+i;
+        wordDiv.className = 'pr-single-word';
+        tree.appendChild(wordDiv);
+        tree.appendChild(document.createElement('br'));
+      } else {
+        let wordDiv = document.createElement('div');
+        wordDiv.id = 'pr-word-'+i;
+        wordDiv.className = 'pr-single-word';
+        wordDiv.appendChild(document.createTextNode(word));
+        wordDiv.addEventListener('mouseover', colorAdd);
+        wordDiv.addEventListener('click', colorClear);
+        tree.appendChild(wordDiv);
+      }
+
     });
     $("#pr-example-text").append(tree);
   });
