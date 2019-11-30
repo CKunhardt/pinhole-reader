@@ -26,7 +26,10 @@ $(() => {
     $("#pr-example-text").append(tree);
   });
 
-  document.addEventListener('dblclick', function() {selecting = !selecting; });
+  $("#reading-area").bind('dblclick', function() {
+    selecting = !selecting;
+  });
+
 });
 
 $("#pr-zoom-in").click(() => {

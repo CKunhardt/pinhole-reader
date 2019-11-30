@@ -66,7 +66,8 @@
   height: 50%; }
 
 #pr-example-text {
-  overflow-y: auto; }
+  top: 25%;
+  bottom: 25%; }
 
 .pr-bar-container {
   flex: 8;

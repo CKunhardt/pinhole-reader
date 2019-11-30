@@ -1,5 +1,7 @@
 let last_known_scroll_position = 0;
 let ticking = false;
+let readingRatio = 0;
+let hwRatio = 0;
 
 function updateScrollBar(scroll_pos) {
   let docHeight = $(document).height();
@@ -18,6 +20,36 @@ function updateScrollBar(scroll_pos) {
   }
 
 }
+function updateProgressBar(progress_pos) {
+  let docHeight = $(document).height();
+  let winHeight = $(window).height();
+  let parentWidth = $('#mySidenav').width();
+  let scrollRatio = Math.min(Math.max(1, last_known_scroll_position / (docHeight - winHeight) *  100), 100);
+  readingRatio = Math.max(scrollRatio, readingRatio);
+
+  let width = readingRatio.toFixed(0).toString();
+  let widthStr = width + "%";
+  $('#reading-progress').css("width", widthStr);
+  $('#reading-progress').prop('aria-valuenow', width)
+  $('#reading-progress').text(widthStr)
+}
+
+function updateHWBar(progress_pos) {
+  let docHeight = $(document).height() * 2.5;
+  // This is definitely a wrong heuristic
+  // Need to change to the length of homework
+  // Probably get the number of words in the readings and => doc / entire reading
+  let winHeight = $(window).height();
+  let parentWidth = $('#mySidenav').width();
+  let scrollRatio = Math.min(Math.max(1, last_known_scroll_position / (docHeight - winHeight) *  100), 100);
+  hwRatio = Math.max(scrollRatio, hwRatio);
+
+  let width = hwRatio.toFixed(0).toString();
+  let widthStr = width + "%";
+  $('#hw-progress').css("width", widthStr);
+  $('#hw-progress').prop('aria-valuenow', width)
+  $('#hw-progress').text(widthStr)
+}
 
 window.addEventListener('scroll', function(e) {
   last_known_scroll_position = window.scrollY;
@@ -25,6 +57,8 @@ window.addEventListener('scroll', function(e) {
   if (!ticking) {
     window.requestAnimationFrame(function(timestamp) {
       updateScrollBar(last_known_scroll_position, timestamp);
+      updateProgressBar(last_known_scroll_position, timestamp);
+      updateHWBar(last_known_scroll_position, timestamp);
       ticking = false;
     });
 
