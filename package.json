@@ -4,7 +4,7 @@
   "description": "HCI project for more efficient reading",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "sass.bat --watch ./stylesheets:./public/css --style compressed"
   },
   "author": "Clinton Kunhardt",
   "license": "ISC",

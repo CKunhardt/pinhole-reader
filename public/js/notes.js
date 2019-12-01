@@ -14,7 +14,7 @@ let removeBox = function(noteID) {
 }
 
 $(function() {
-  $("#note-area, #hover-area").bind('click', function(event) {
+  $("#pr-area-note, #pr-area-hover").bind('click', function(event) {
     if(event.target != this) return;
     let parentOffset = $(this).parent().offset();
     let x = event.pageX - parentOffset.left;
@@ -49,11 +49,11 @@ $(function() {
     noteDiv.appendChild(subDiv);
 
 
-    $("#note-area").append(noteDiv);
+    $("#pr-area-note").append(noteDiv);
     num_notes++;
   });
 
-  $("#hover-area").on("mouseenter", function(event) {
+  $("#pr-area-hover").on("mouseenter", function(event) {
     let parentOffset = $(this).parent().offset();
     let y = event.pageY - parentOffset.top - $("h3").height();
 
@@ -64,10 +64,10 @@ $(function() {
     reminder.style.top = y + 'px';
     reminder.style.fontSize = "30px";
     reminder.appendChild(document.createTextNode("+"));
-    $("#hover-area").append(reminder);
+    $("#pr-area-hover").append(reminder);
   })
 
-  $("#hover-area").on("mouseleave", function(event) {
+  $("#pr-area-hover").on("mouseleave", function(event) {
     let element = document.getElementById("reminder");
     element.parentNode.removeChild(element);
     // $("#hover-area").removeChild("reminder");

@@ -11,88 +11,60 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </head>
-  <body class="container-fluid">
+  <!-- <body class="container-fluid"> -->
+  <body>
 
     <!-- Put a title here, maybe. Low priority. -->
     <!-- <header>
 
     </header> -->
 
-    <div class="row">
-      <div class="col-8" id="reading-area">
-        <div class="pr-filter-box pr-filter-box-top"></div>
-        <div id="pr-example-text"></div>
-        <div class="pr-filter-box pr-filter-box-bottom"></div>
-
-        <footer>
-          <div class="pr-controls">
-            <div class="pr-size-controls">
-              <div id="pr-zoom-out" class="pr-icon">
-                <div id="pr-zoom-out-disabled" class="pr-icon"></div>
-              </div>
-              <div id="pr-zoom-in" class="pr-icon">
-                <div id="pr-zoom-in-disabled" class="pr-icon"></div>
-              </div>
-            </div>
-            <div class="pr-bar-container">
-              <div id="pr-progress-bar-outer">
-                <div id="pr-progress-bar-inner"></div>
-              </div>
-            </div>
-            <div class="pr-other-controls">
-              <a id="pr-button-next" class="btn btn-primary pr-display-none" href="/">
-                CONTINUE
-              </a>
-            </div>
-          </div>
-        </footer>
-      </div>
-
-      <div class="col-4" id="note-area" style="position: relative">
-        <h3>Comments</h3>
-        <div id="hover-area" style="position: relative;left: 0; width: 50px; height: 100%;"></div>
-      </div>
-
-      <div class="col-4" id="mySidenav">
-          <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
-          <div style="position: -webkit-sticky; position: sticky; top:0">
-            <a href="#">Progress</a>
-            <div class="progress">
-              <div id="reading-progress" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-
-            <div class="progress">
-              <div id="hw-progress" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-          <div style="position: absolute; left: 20px; top: 500px"> Hello!!!
-          </div>
-      </div>
-    </div>
-
-    <!-- Vericle Nav Bar -->
-    <span id="pr-btn" style="font-size:30px;cursor:pointer; color:blue">&#9776;</span>
-
-
-
-
-
     <!-- Majority of content goes here -->
-    <!-- <main>
-      <div class="pr-container">
-        <div id="pr-example-text">
-            <div class="pr-filter-box pr-filter-box-top"></div>
-            <div class="pr-filter-box pr-filter-box-left"></div>
-            <div class="pr-filter-box pr-filter-box-right"></div>
-            <div class="pr-filter-box pr-filter-box-bottom"></div>
-         </div>
+    <main>
+      <div class="pr-main-flex">
+        <div id="pr-window-text">
+          <div id="pr-container-text" class="pr-container">
+            <div id="pr-example-text">
+                <div id='pr-filter-box-top' class="pr-filter-box pr-filter-box-fw"></div>
+                <div id='pr-filter-box-left' class="pr-filter-box"></div>
+                <div id='pr-filter-box-right' class="pr-filter-box pr-filter-box-right-fw"></div>
+                <div id='pr-filter-box-bottom' class="pr-filter-box pr-filter-box-fw"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pr-display-none" id="pr-sidebar-comments">
+            <div class="pr-sidebar-header">
+              <div class="pr-sidebar-tab pr-sidebar-tab-active" id="pr-sidebar-tab-comments-1">Comments</div>
+              <div class="pr-sidebar-tab" id="pr-sidebar-tab-completion-1">Completion</div>
+            </div>
+          <div id="pr-area-note">
+            <div id="pr-area-hover"></div>
+          </div>
+        </div>
+
+        <div class="pr-display-none" id="pr-sidebar-completion">
+          <div class="pr-sidebar-header">
+            <div class="pr-sidebar-tab" id="pr-sidebar-tab-comments-2">Comments</div>
+            <div class="pr-sidebar-tab pr-sidebar-tab-active" id="pr-sidebar-tab-completion-2">Completion</div>
+          </div>
+          <div class="pr-status-sticky">
+            <a href="#">Completion</a>
+            <div class="pr-completion">
+              <div id="pr-completion-reading" class="pr-completion-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+            <div class="pr-progress">
+              <div id="pr-completion-hw" class="pr-completion-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
       </div>
 
-    </main> -->
+    </main>
 
     <!-- Controls here probably -->
-    <!-- <footer>
+    <footer>
       <div class="pr-controls">
         <div class="pr-size-controls">
           <div id="pr-zoom-out" class="pr-icon">
@@ -111,16 +83,12 @@
           <a id="pr-button-next" class="btn btn-primary pr-display-none" href="/">
             CONTINUE
           </a>
+          <div id="pr-button-sidebar">&#9776;</div>
         </div>
       </div>
 
-    </footer> -->
+    </footer>
 
     <script src="js/reader.js"></script>
-    <script>
-      function removeBox(boxID) {
-        alert(boxID);
-      }
-    </script>
   </body>
 </html>

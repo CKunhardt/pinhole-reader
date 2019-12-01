@@ -1,25 +1,40 @@
 html, body {
   margin: 0;
   padding: 0;
-  width: 100%;
+
+  background-color: $prGrayLight;
 
   font-family: 'Helvetica', sans-serif;
   font-size: 28px;
-  line-height: 2;
+  line-height: 2 !important;
   position: relative;
+}
+
+body {
+  background-color: $prGrayLight !important;
+  padding: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 main {
   width: 100%;
+  height: 100%;
+}
+
+.pr-container-modifier {
+  background-color: $prWhite;
+  box-shadow: $prShadowLight;
 }
 
 .pr-container {
-  width: 1280px;
-  display: block;
-  margin: auto;
+  width: 75%;
+  margin: 0 auto;
+  background-color: $prWhite;
+  flex: 8;
 }
 
 .pr-navbar {
-  box-shadow: 0px 0px 5px rgba(100, 100, 100, 0.5);
+  box-shadow: $prShadowLight;
   margin-bottom: 25px;
 }

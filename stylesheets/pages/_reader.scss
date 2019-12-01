@@ -1,11 +1,21 @@
+.pr-main-flex {
+  display: flex;
+  flex-direction: row;
+  // flex-basis: 25%;
+}
+
+#pr-window-text {
+  flex: 9;
+}
+
 #pr-example-text {
-  margin-top: 25%;
-  margin-bottom: 25%;
+  padding-top: 25%;
+  padding-bottom: 25%;
   width: 100%;
+  overflow-y: auto;
 }
 
 .pr-single-word {
-  // background-color: rgba(255,255,128,0.5);
   display: inline;
 }
 

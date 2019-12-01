@@ -39,6 +39,9 @@ $(() => {
     $("#pr-example-text").append(tree);
   });
 
+  let textWidth = $(window).width() * (3 / 4);
+  $("#pr-container-text").css('width', textWidth+'px');
+
   $("#reading-area").bind('dblclick', function() {
     selecting = !selecting;
   });
@@ -64,12 +67,46 @@ $("#pr-zoom-out").click(() => {
 })
 
 
-$("#pr-btn").click(() => {
-  if($("#mySidenav").is(":hidden")) {
-    $("#note-area").fadeOut();
-    $("#mySidenav").fadeIn();
+$("#pr-button-sidebar").click(() => {
+  if(!$("#pr-sidebar-completion").hasClass('pr-display-none')) {
+    $("#pr-sidebar-completion").addClass('pr-display-none');
+    prToggleContentWidth('fw');
+  } else if(!$("#pr-sidebar-comments").hasClass('pr-display-none')) {
+    $("#pr-sidebar-comments").addClass('pr-display-none');
+    prToggleContentWidth('fw');
   } else {
-    $("#mySidenav").fadeOut();
-    $("#note-area").fadeIn();
+    $('#pr-sidebar-comments').removeClass('pr-display-none');
+    prToggleContentWidth('tqw');
+    
   }
 })
+
+$("#pr-sidebar-tab-completion-1").click(() => {
+  $('#pr-sidebar-comments').addClass('pr-display-none');
+  $('#pr-sidebar-completion').removeClass('pr-display-none');
+})
+
+$("#pr-sidebar-tab-comments-2").click(() => {
+  $('#pr-sidebar-completion').addClass('pr-display-none');
+  $('#pr-sidebar-comments').removeClass('pr-display-none');
+
+})
+
+
+let prToggleContentWidth = (size) => {
+  let sizes = ['fw', 'tqw'];
+  if (sizes.indexOf(size) == -1) return;
+  let prevSize = sizes[(sizes.indexOf(size) + 1) % 2];
+
+  if (size == 'fw') $("#pr-container-text").css('width', ($(window).width() * (3/4))+'px');
+  else if (size == 'tqw') $("#pr-container-text").css('width', ($(window).width() * (1/2))+'px');
+
+
+  $('#pr-filter-box-top').removeClass(`pr-filter-box-${prevSize}`);
+  $('#pr-filter-box-bottom').removeClass(`pr-filter-box-${prevSize}`);
+  $('#pr-filter-box-right').removeClass(`pr-filter-box-right-${prevSize}`);
+
+  $('#pr-filter-box-top').addClass(`pr-filter-box-${size}`);
+  $('#pr-filter-box-bottom').addClass(`pr-filter-box-${size}`);
+  $('#pr-filter-box-right').addClass(`pr-filter-box-right-${size}`);
+}

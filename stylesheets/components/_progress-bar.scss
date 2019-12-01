@@ -8,7 +8,7 @@
 #pr-progress-bar-outer {
   height: 10px;
   width: 100%;
-  background-color: rgb(155,155,155);
+  background-color: $prGrayMed;
   border-radius: 4px;
 }
 
@@ -16,26 +16,5 @@
   height: 10px;
   border-radius: 4px;
   width: 1%;
-  background-color: rgb(100,100,100);
-}
-#pr-btn {
-  position: fixed;
-  right: 0;
-  top: 50%;
-}
-
-#mySidenav {
-  // position: absolute;
-  // z-index:-1;
-  // right: 0;
-  // height: 100%;
-  display: none;
-  background-color: #123456;
-}
-
-.sidenav .closebtn {
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+  background-color: $prGrayMedDark;
 }

@@ -10,10 +10,14 @@
 }
 
 .pr-reading-block {
-  background: rgb(200, 200, 200);
-  box-shadow: 0 0 5px rgba(100, 100, 100, 0.5);
+  background-color: $prGrayLight;
+  box-shadow: inset $prShadowLight;
   display: flex;
   align-items: center;
+
+  img {
+    box-shadow: $prShadowLight;
+  }
 }
 
 .modal-body {
@@ -30,7 +34,8 @@
 #pr-add-block {
   cursor: pointer;
   background: center / contain no-repeat url('../images/icons/add.png');
-  box-shadow: 0 0 5px rgba(100, 100, 100, 0.5);
+  background-color: $prGrayLight;
+  box-shadow: inset $prShadowLight;
   width: 200px;
   height: 300px;
 }
