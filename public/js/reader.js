@@ -39,9 +39,6 @@ $(() => {
     $("#pr-example-text").append(tree);
   });
 
-  let textWidth = $(window).width() * (3 / 4);
-  $("#pr-container-text").css('width', textWidth+'px');
-
   $("#reading-area").bind('dblclick', function() {
     selecting = !selecting;
   });
