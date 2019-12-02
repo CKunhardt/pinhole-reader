@@ -14,6 +14,9 @@
   flex-direction: row;
   align-content: center;
   justify-content: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 .pr-sidebar-tab {
