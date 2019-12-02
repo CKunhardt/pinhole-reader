@@ -6,7 +6,7 @@
 #pr-sidebar-comments {
   flex: 3;
   background-color: $prGrayLightMed;
-
+  position: relative;
 }
 
 .pr-sidebar-header {
@@ -36,7 +36,9 @@
 }
 
 #pr-area-note {
+  width: 100%;
   height: 100%;
+  position: absolute;
 }
 
 #pr-area-hover {

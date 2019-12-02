@@ -14,11 +14,13 @@ let removeBox = function(noteID) {
 }
 
 $(function() {
-  $("#pr-area-note, #pr-area-hover").bind('click', function(event) {
+  $("#reminder, #pr-area-note, #pr-area-hover").bind('click', function(event) {
     if(event.target != this) return;
     let parentOffset = $(this).parent().offset();
     let x = event.pageX - parentOffset.left;
     let y = event.pageY - parentOffset.top;
+
+    console.log(y);
     //
     // $("note-area")
     let noteDiv = document.createElement('div');
@@ -48,14 +50,14 @@ $(function() {
     subDiv.appendChild(textArea);
     noteDiv.appendChild(subDiv);
 
-
     $("#pr-area-note").append(noteDiv);
     num_notes++;
   });
 
   $("#pr-area-hover").on("mouseenter", function(event) {
     let parentOffset = $(this).parent().offset();
-    let y = event.pageY - parentOffset.top - $("h3").height();
+    let y = event.pageY - parentOffset.top;
+    console.log(y);
 
     let reminder = document.createElement('div');
     reminder.id = "reminder";
