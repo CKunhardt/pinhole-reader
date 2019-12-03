@@ -29,9 +29,9 @@ function updateProgressBar(progress_pos) {
 
   let width = readingRatio.toFixed(0).toString();
   let widthStr = width + "%";
-  $('#reading-progress').css("width", widthStr);
-  $('#reading-progress').prop('aria-valuenow', width)
-  $('#reading-progress').text(widthStr)
+  $('#pr-completion-reading').css("width", widthStr);
+  $('#pr-completion-reading').prop("aria-valuenow", width)
+  $('#pr-completion-reading').text(widthStr)
 }
 
 function updateHWBar(progress_pos) {
@@ -46,9 +46,9 @@ function updateHWBar(progress_pos) {
 
   let width = hwRatio.toFixed(0).toString();
   let widthStr = width + "%";
-  $('#hw-progress').css("width", widthStr);
-  $('#hw-progress').prop('aria-valuenow', width)
-  $('#hw-progress').text(widthStr)
+  $('#pr-completion-hw').css("width", widthStr);
+  $('#pr-completion-hw').prop('aria-valuenow', width)
+  $('#pr-completion-hw').text(widthStr)
 }
 
 window.addEventListener('scroll', function(e) {
