@@ -1,0 +1,55 @@
+#pr-sidebar-completion {
+  flex: 3;
+  background-color: $prGrayLightMed;
+}
+
+#pr-sidebar-comments {
+  flex: 3;
+  background-color: $prGrayLightMed;
+  position: relative;
+}
+
+.pr-sidebar-header {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.pr-sidebar-tab {
+  display: block;
+  flex: 1;
+  text-align: center;
+  background-color: $prGrayLight;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.pr-sidebar-tab-active {
+  box-shadow: $prShadowDarkUp;
+  z-index: 4;
+}
+
+#pr-area-note {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#pr-area-hover {
+  position: relative;
+  left: 0;
+  width: 50px;
+  height: 100%;
+}
+
+.pr-status-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
