@@ -4,13 +4,14 @@
   "description": "HCI project for more efficient reading",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "sass.bat --watch ./stylesheets:./public/css --style compressed"
   },
   "author": "Clinton Kunhardt",
   "license": "ISC",
   "dependencies": {
     "ejs": "^2.7.4",
     "express": "^4.17.1",
-    "package.json": "^2.0.1"
+    "package.json": "^2.0.1",
+    "pdf-parse": "^1.1.1"
   }
 }

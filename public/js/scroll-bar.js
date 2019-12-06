@@ -23,15 +23,15 @@ function updateScrollBar(scroll_pos) {
 function updateProgressBar(progress_pos) {
   let docHeight = $(document).height();
   let winHeight = $(window).height();
-  let parentWidth = $('#mySidenav').width();
+  let parentWidth = $('#side-progress-area').width();
   let scrollRatio = Math.min(Math.max(1, last_known_scroll_position / (docHeight - winHeight) *  100), 100);
   readingRatio = Math.max(scrollRatio, readingRatio);
 
   let width = readingRatio.toFixed(0).toString();
   let widthStr = width + "%";
-  $('#reading-progress').css("width", widthStr);
-  $('#reading-progress').prop('aria-valuenow', width)
-  $('#reading-progress').text(widthStr)
+  $('#pr-completion-reading').css("width", widthStr);
+  $('#pr-completion-reading').prop("aria-valuenow", width)
+  $('#pr-completion-reading').text(widthStr)
 }
 
 function updateHWBar(progress_pos) {
@@ -40,15 +40,15 @@ function updateHWBar(progress_pos) {
   // Need to change to the length of homework
   // Probably get the number of words in the readings and => doc / entire reading
   let winHeight = $(window).height();
-  let parentWidth = $('#mySidenav').width();
+  let parentWidth = $('#side-progress-area').width();
   let scrollRatio = Math.min(Math.max(1, last_known_scroll_position / (docHeight - winHeight) *  100), 100);
   hwRatio = Math.max(scrollRatio, hwRatio);
 
   let width = hwRatio.toFixed(0).toString();
   let widthStr = width + "%";
-  $('#hw-progress').css("width", widthStr);
-  $('#hw-progress').prop('aria-valuenow', width)
-  $('#hw-progress').text(widthStr)
+  $('#pr-completion-hw').css("width", widthStr);
+  $('#pr-completion-hw').prop('aria-valuenow', width)
+  $('#pr-completion-hw').text(widthStr)
 }
 
 window.addEventListener('scroll', function(e) {
