@@ -12,58 +12,49 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </head>
   <!-- <body class="container-fluid"> -->
-  <body>
-
-    <!-- Put a title here, maybe. Low priority. -->
-    <!-- <header>
-
-    </header> -->
-
-    <!-- Majority of content goes here -->
-    <main>
-      <div class="pr-main-flex">
-        <div id="pr-window-text">
-          <div id="pr-container-text" class="pr-container">
-            <div id="pr-example-text">
-                <div id='pr-filter-box-top' class="pr-filter-box pr-filter-box-fw"></div>
-                <div id='pr-filter-box-left' class="pr-filter-box"></div>
-                <div id='pr-filter-box-right' class="pr-filter-box pr-filter-box-right-fw"></div>
-                <div id='pr-filter-box-bottom' class="pr-filter-box pr-filter-box-fw"></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="pr-display-none" id="pr-sidebar-comments">
-            <div class="pr-sidebar-header">
-              <div class="pr-sidebar-tab pr-sidebar-tab-active" id="pr-sidebar-tab-comments-1">Comments</div>
-              <div class="pr-sidebar-tab" id="pr-sidebar-tab-completion-1">Completion</div>
-            </div>
-            <div id="pr-area-note">
-              <div id="pr-area-hover"></div>
-            </div>
-        </div>
-
-        <div class="pr-display-none" id="pr-sidebar-completion">
-          <div class="pr-sidebar-header">
-            <div class="pr-sidebar-tab" id="pr-sidebar-tab-comments-2">Comments</div>
-            <div class="pr-sidebar-tab pr-sidebar-tab-active" id="pr-sidebar-tab-completion-2">Completion</div>
-          </div>
-          <div class="pr-status-sticky">
-            <a href="#">Completion</a>
-            <div class="pr-completion">
-              <div id="pr-completion-reading" class="pr-completion-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-
-            <div class="pr-progress">
-              <div id="pr-completion-hw" class="pr-completion-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-        </div>
+  <body class="container-fluid">
+    <div class="row">
+      <div class="col-2" id="left-col">
+          <div class="pr-filter-box" id='pr-filter-box-left'></div>
       </div>
 
-    </main>
+      <div class="col-8" id="reading-area" style="position: relative">
+          <div class="pr-filter-box" id="pr-filter-box-top"></div>
+          <div id="pr-example-text"></div>
+          <div class="pr-filter-box" id="pr-filter-box-bottom"></div>
+      </div>
 
-    <!-- Controls here probably -->
+      <div class="col-4" id="note-area" style="position: relative; display: none">
+        <h3>Comments</h3>
+        <div id="hover-area" style="position: relative;left: 0; width: 50px; height: 100%;"></div>
+      </div>
+
+      <div class="col-4" id="side-progress-area" style="display: none">
+        <div style="position: -webkit-sticky; position: sticky; top:0">
+            <h3 style="color: blue">Progress</h3>
+            <div style="position: relative">
+              <div style="position: absolute; top: 20vh">
+                <h4>Reading Completion</h4>
+                <div class="progress" >
+                  <div id="pr-completion-reading" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+
+              <div style="position: absolute; top: 50vh">
+                <h4>Homework Completion</h4>
+                <div class="progress">
+                  <div id="pr-completion-hw" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="col-2" id="right-col">
+        <div class="pr-filter-box" id='pr-filter-box-right'></div>
+      </div>
+    </div>
+
     <footer>
       <div class="pr-controls">
         <div class="pr-size-controls">
@@ -80,15 +71,13 @@
           </div>
         </div>
         <div class="pr-other-controls">
-          <a id="pr-button-next" class="btn btn-primary pr-display-none" href="/">
+          <div id="note-control-btn" class="pr-icon"></div>
+          <div id="progress-control-btn" class="pr-icon"></div>
+          <a id="pr-button-next" class="btn btn-primary btn-sm pr-display-none" href="/">
             CONTINUE
           </a>
-          <div id="pr-button-sidebar">&#9776;</div>
         </div>
       </div>
-
-    </footer>
-
     <script src="js/reader.js"></script>
   </body>
 </html>

@@ -23,7 +23,7 @@ function updateScrollBar(scroll_pos) {
 function updateProgressBar(progress_pos) {
   let docHeight = $(document).height();
   let winHeight = $(window).height();
-  let parentWidth = $('#mySidenav').width();
+  let parentWidth = $('#side-progress-area').width();
   let scrollRatio = Math.min(Math.max(1, last_known_scroll_position / (docHeight - winHeight) *  100), 100);
   readingRatio = Math.max(scrollRatio, readingRatio);
 
@@ -40,7 +40,7 @@ function updateHWBar(progress_pos) {
   // Need to change to the length of homework
   // Probably get the number of words in the readings and => doc / entire reading
   let winHeight = $(window).height();
-  let parentWidth = $('#mySidenav').width();
+  let parentWidth = $('#side-progress-area').width();
   let scrollRatio = Math.min(Math.max(1, last_known_scroll_position / (docHeight - winHeight) *  100), 100);
   hwRatio = Math.max(scrollRatio, hwRatio);
 

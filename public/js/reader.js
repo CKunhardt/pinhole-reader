@@ -83,47 +83,54 @@ $("#pr-zoom-out").click(() => {
   } else return
 })
 
+// Footer buttons effects
+// This is the note
+let moveTextLeft = function() {
+  // Hide the side blurry areas
+  $("#left-col").hide();
+  $("#right-col").hide();
+  // Move the top and bottom to align the layout
+  $("#pr-filter-box-top").css("left", "0");
+  $("#pr-filter-box-bottom").css("left", "0");
+}
 
-$("#pr-button-sidebar").click(() => {
-  if(!$("#pr-sidebar-completion").hasClass('pr-display-none')) {
-    $("#pr-sidebar-completion").addClass('pr-display-none');
-    prToggleContentWidth('fw');
-  } else if(!$("#pr-sidebar-comments").hasClass('pr-display-none')) {
-    $("#pr-sidebar-comments").addClass('pr-display-none');
-    prToggleContentWidth('fw');
+let moveTextRight = function() {
+  $("#left-col").show();
+  $("#right-col").show();
+  $("#pr-filter-box-top").css("left", "16.67%");
+  $("#pr-filter-box-bottom").css("left", "16.67%");
+}
+
+$("#note-control-btn").click(() => {
+  if($("#note-area").is(":hidden")) {
+    if($("#side-progress-area").is(":visible")) {
+      // wait to fill
+      $("#side-progress-area").hide();
+      $("#note-area").show();
+    } else {
+      // When no comments and progress bar
+      moveTextLeft();
+      $("#note-area").show();
+    }
+    enableNote();
   } else {
-    $('#pr-sidebar-comments').removeClass('pr-display-none');
-    prToggleContentWidth('tqw');
+    moveTextRight();
+    $("#note-area").hide();
+  }
+});
 
+$("#progress-control-btn").click(() => {
+  if($("#side-progress-area").is(":hidden")) {
+    if($("#note-area").is(":visible")) {
+      $("#note-area").hide();
+      $("#side-progress-area").show();
+    } else {
+      moveTextLeft();
+      $("#side-progress-area").show();
+    }
+  } else {
+    // when no comments(notes) and progress bar
+    moveTextRight();
+    $("#side-progress-area").hide();
   }
 })
-
-$("#pr-sidebar-tab-completion-1").click(() => {
-  $('#pr-sidebar-comments').addClass('pr-display-none');
-  $('#pr-sidebar-completion').removeClass('pr-display-none');
-})
-
-$("#pr-sidebar-tab-comments-2").click(() => {
-  $('#pr-sidebar-completion').addClass('pr-display-none');
-  $('#pr-sidebar-comments').removeClass('pr-display-none');
-
-})
-
-
-let prToggleContentWidth = (size) => {
-  let sizes = ['fw', 'tqw'];
-  if (sizes.indexOf(size) == -1) return;
-  let prevSize = sizes[(sizes.indexOf(size) + 1) % 2];
-
-  if (size == 'fw') $("#pr-container-text").css('width', ($(window).width() * (3/4))+'px');
-  else if (size == 'tqw') $("#pr-container-text").css('width', ($(window).width() * (1/2))+'px');
-
-
-  $('#pr-filter-box-top').removeClass(`pr-filter-box-${prevSize}`);
-  $('#pr-filter-box-bottom').removeClass(`pr-filter-box-${prevSize}`);
-  $('#pr-filter-box-right').removeClass(`pr-filter-box-right-${prevSize}`);
-
-  $('#pr-filter-box-top').addClass(`pr-filter-box-${size}`);
-  $('#pr-filter-box-bottom').addClass(`pr-filter-box-${size}`);
-  $('#pr-filter-box-right').addClass(`pr-filter-box-right-${size}`);
-}

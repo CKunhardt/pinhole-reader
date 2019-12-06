@@ -1,0 +1,20 @@
+.pr-bar-container {
+  flex: 8;
+  width: 95%;
+  display: block;
+  margin: auto;
+}
+
+#pr-progress-bar-outer {
+  height: 10px;
+  width: 100%;
+  background-color: $prGrayMed;
+  border-radius: 4px;
+}
+
+#pr-progress-bar-inner {
+  height: 10px;
+  border-radius: 4px;
+  width: 1%;
+  background-color: $prGrayMedDark;
+}
