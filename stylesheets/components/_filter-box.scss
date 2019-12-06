@@ -7,44 +7,31 @@
 #pr-filter-box-top {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 16.67%;
+  width: 66.67%;
   height: 25%;
 }
 
 #pr-filter-box-bottom {
   position: fixed;
   bottom: 0;
-  left: 0;
+  left: 16.67%;
+  width: 66.67%;
   height: 25%;
 }
 
 #pr-filter-box-left {
   position: fixed;
-  top: 25%;
+  top: 0;
   left: 0;
-  width: 12.5%;
-  height: 50%;
+  width: 16.67%;
+  height: 100%;
 }
 
 #pr-filter-box-right {
   position: fixed;
-  top: 25%;
-  width: 12.5%;
-  height: 50%;
-}
-
-.pr-filter-box-right-fw {
+  top: 0;
   right: 0;
-}
-
-.pr-filter-box-right-tqw {
-  right: 25%;
-}
-
-.pr-filter-box-fw {
-  width: 100%;
-}
-
-.pr-filter-box-tqw {
-  width: 75%;
+  width: 16.67%;
+  height: 100%;
 }
