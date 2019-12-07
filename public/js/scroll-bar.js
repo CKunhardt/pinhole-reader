@@ -3,6 +3,9 @@ let ticking = false;
 let readingRatio = 0;
 let hwRatio = 0;
 
+const OVERALL_SECONDS = 3650;
+const HW_HEURISTICS = 2.5;
+
 function updateScrollBar(scroll_pos) {
   let docHeight = $(document).height();
   let winHeight = $(window).height();
@@ -31,7 +34,13 @@ function updateProgressBar(progress_pos) {
   let widthStr = width + "%";
   $('#pr-completion-reading').css("width", widthStr);
   $('#pr-completion-reading').prop("aria-valuenow", width)
-  $('#pr-completion-reading').text(widthStr)
+  $('#pr-completion-reading').text(widthStr);
+
+  let time_left = OVERALL_SECONDS - (OVERALL_SECONDS * (width / 100));
+  let hour = Math.floor(time_left / 3600);
+  let minute = Math.floor((time_left - hour * 3600) / 60);
+  let second = Math.floor(time_left - hour * 3600 - minute * 60);
+  $('#reading-time-left').text(hour + " hours " + minute + " minutes " + second + " seconds.");
 }
 
 function updateHWBar(progress_pos) {
@@ -48,7 +57,14 @@ function updateHWBar(progress_pos) {
   let widthStr = width + "%";
   $('#pr-completion-hw').css("width", widthStr);
   $('#pr-completion-hw').prop('aria-valuenow', width)
-  $('#pr-completion-hw').text(widthStr)
+  $('#pr-completion-hw').text(widthStr);
+
+  let time_left = OVERALL_SECONDS * HW_HEURISTICS - (OVERALL_SECONDS * HW_HEURISTICS * (width / 100));
+  let hour = Math.floor(time_left / 3600);
+  let minute = Math.floor((time_left - hour * 3600) / 60);
+  let second = Math.floor(time_left - hour * 3600 - minute * 60);
+  $('#hw-time-left').text(hour + " hours " + minute + " minutes " + second + " seconds.");
+
 }
 
 window.addEventListener('scroll', function(e) {

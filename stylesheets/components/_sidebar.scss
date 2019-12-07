@@ -1,3 +1,30 @@
+.completion-time-left-text {
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.flex-container > div {
+  width: 95%;
+  margin: 10px;
+  text-align: center;
+  line-height: 25px;
+  font-size: 20px;
+}
+
+#profile-pic{
+  height: 60px;
+  width: 60px;
+  background: center / contain url("../../images/icons/scot-profile-pic.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 #pr-sidebar-completion {
   flex: 3;
   background-color: $prGrayLightMed;

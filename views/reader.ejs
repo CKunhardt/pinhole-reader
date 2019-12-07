@@ -13,7 +13,7 @@
   </head>
   <!-- <body class="container-fluid"> -->
   <body class="container-fluid">
-    <div class="row">
+    <div class="row no-gutters">
       <div class="col-2" id="left-col">
           <div class="pr-filter-box" id='pr-filter-box-left'></div>
       </div>
@@ -24,30 +24,61 @@
           <div class="pr-filter-box" id="pr-filter-box-bottom"></div>
       </div>
 
-      <div class="col-4" id="note-area" style="position: relative; display: none">
+      <div class="col-4" id="note-area" style="display: none; position: relative; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
         <h3>Comments</h3>
         <div id="hover-area" style="position: relative;left: 0; width: 50px; height: 100%;"></div>
       </div>
 
-      <div class="col-4" id="side-progress-area" style="display: none">
+      <div class="col-4" id="side-progress-area" style="display: none; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
         <div style="position: -webkit-sticky; position: sticky; top:0">
             <h3 style="color: blue">Progress</h3>
-            <div style="position: relative">
-              <div style="position: absolute; top: 20vh; width: 100%">
-                <h4>Reading Completion</h4>
+            <div style="padding-top: 10px; width: 95%; text-align: center">
+              <p class="completion-time-left-text">Reading Completion</p>
+              <div style="width: 95%; margin: auto;">
                 <div class="progress" style="width: 100%">
                   <div id="pr-completion-reading" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </div>
+              <div class="completion-time-left-text">
+                <p class="completion-time-left-text" style="font-size: 16px;">Time left for this reading: </p>
+                <p id="reading-time-left" class="completion-time-left-text" style="font-size: 16px;"></p>
+              </div>
+            </div>
 
-              <div style="position: absolute; top: 50vh; width: 100%">
-                <h4>Homework Completion</h4>
+            <hr>
+            <div style="padding-top: 10px; width: 95%; text-align: center">
+              <p class="completion-time-left-text">Homework Completion</p>
+              <div style="width: 95%; margin: auto;">
                 <div class="progress" style="width: 100%">
                   <div id="pr-completion-hw" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </div>
+              <div class="completion-time-left-text">
+                <p class="completion-time-left-text" style="font-size: 16px;">Time left for this reading: </p>
+                <p id="hw-time-left" class="completion-time-left-text" style="font-size: 16px;"></p>
+              </div>
             </div>
-          </div>
+
+            <hr>
+
+            <div class="card container flex-container" style="margin-top: 5vh; width: 70%; height: 45vh;">
+                <div style="flex-grow: 2; margin: auto; padding-top: 30px;">
+                  <img src="../../images/icons/scot-profile-pic.png" alt="Card image cap" style="height: 120px; width: 120px; margin: 0 auto;">
+                </div>
+
+              <div style="flex-grow: 1; margin: auto; text-align: center">
+                <h5 class="card-title" style="margin: 2px; padding: 2px">Scot</h5>
+              </div>
+
+              <div style="flex-grow: 6; margin: auto; padding: 10px; text-align: center">
+                <div style="font-size: 18px; margin: 0">
+                  <p class="card-text" style="margin: 2px; padding: 2px">This month you have read: 16 articles</p>
+                  <p class="card-text" style="margin: 2px; padding: 2px">This year you have read: 105 articles</p>
+                  <p class="card-text" style="margin: 2px; padding: 2px">You have read 216 articles in total</p>
+                </div>
+              </div>
+            </div>
+        </div>
       </div>
 
       <div class="col-2" id="right-col">

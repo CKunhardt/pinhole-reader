@@ -35,9 +35,12 @@ $(function() {
     subDiv.style.display = "inline-block";
 
     let textArea = document.createElement('textarea');
-    textArea.placeholder = "Add Your Comment"
-    textArea.width="60%";
-    textArea.rows="3";
+    textArea.placeholder = "Add Your Comment";
+    textArea.width="90%";
+    textArea.rows="5";
+    textArea.style.fontSize = "15px";
+    textArea.style.lineHeight = "17px";
+
 
     let button = document.createElement('button');
     button.style.fontSize = "15px";
