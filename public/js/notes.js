@@ -59,18 +59,18 @@ $(function() {
 
   $("#hover-area").on("mouseenter", function(event) {
     let parentOffset = $(this).parent().offset();
-    let y = event.pageY - parentOffset.top;
-    console.log(y);
+
+    let y = event.pageY - parentOffset.top - 75;
 
     let reminder = document.createElement('div');
     reminder.id = "reminder";
     reminder.style.left = "0px";
     reminder.style.position = "absolute";
     reminder.style.top = y + 'px';
-    reminder.style.fontSize = "30px";
+    reminder.style.fontSize = "40px";
     reminder.appendChild(document.createTextNode("+"));
-    $("#pr-area-hover").append(reminder);
-  })
+    $("#hover-area").append(reminder);
+  });
 
   $("#hover-area").on("mouseleave", function(event) {
     let element = document.getElementById("reminder");
