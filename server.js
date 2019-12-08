@@ -14,4 +14,8 @@ app.get('/reader', (req, res) => {
   res.render('reader');
 });
 
+app.get('/about', (req, res) => {
+  res.render('about');
+});
+
 app.listen(port, () => console.log(`Pinhole reader running on port ${port}`));
