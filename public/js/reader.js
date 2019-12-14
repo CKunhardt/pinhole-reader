@@ -9,7 +9,7 @@ let colorClear = function(event) {
 }
 
 $(() => {
-  $.get('texts/map.txt', (data) => {
+  $.get('texts/design.txt', (data) => {
   console.log(data);
   let words = data.match(/([^" "]+\s)/g);
   console.log(words);

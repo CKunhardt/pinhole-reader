@@ -161,7 +161,7 @@ html, body {
   margin: 0;
   padding: 0;
   background-color: #eeeeee;
-  font-family: 'Helvetica', sans-serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 28px;
   position: relative; }
 
@@ -195,6 +195,7 @@ footer {
   left: 0;
   width: 100%;
   height: 7vh;
+  min-height: 80px;
   background-color: #fff;
   z-index: 1000; }
 
@@ -260,6 +261,7 @@ footer {
   flex: 9; }
 
 #pr-example-text {
+  font-family: "Times New Roman", Times, serif;
   padding-top: 26vh;
   padding-bottom: 26vh;
   width: 100%;

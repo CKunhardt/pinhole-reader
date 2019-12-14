@@ -27,7 +27,7 @@ $(function() {
     noteDiv.id = "note-"+num_notes;
     noteDiv.className = "single-note";
     noteDiv.style.position="absolute";
-    noteDiv.style.left = 5 + 'px';
+    noteDiv.style.left = 10 + 'px';
     noteDiv.style.top = y + 'px';
 
     let subDiv = document.createElement('div');
@@ -38,7 +38,8 @@ $(function() {
     textArea.placeholder = "Add Your Comment";
     textArea.width="90%";
     textArea.rows="5";
-    textArea.style.fontSize = "15px";
+    textArea.cols="35";
+    textArea.style.fontSize = "20px";
     textArea.style.lineHeight = "17px";
 
 
